@@ -105,7 +105,7 @@ class CascadeFaceFinder(object):
         results_file = fname.rsplit('.',1)[0] + '.faces.txt' if target_file is None else target_file
         
         if os.path.exists(results_file) and not is_overwrite:
-            print "Warning, faces result file", results_file, "exists"
+            print ("Warning, faces result file", results_file, "exists")
         else:
             with open(results_file,'w') as csvfile:
                 csv_writer = csv.writer(csvfile, delimiter=',')

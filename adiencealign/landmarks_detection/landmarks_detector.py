@@ -15,6 +15,6 @@ def detect_landmarks(fname, max_size = 400*400, min_size = 50*50, fidu_exec_dir 
     max_size = str(max_size) if max_size is not None else ''
     min_size = str(min_size) if min_size is not None else ''
     fidu_cmd = './FiducialFaceDetector.sh Face_small_146filters_-0.65thr.xml %s %s %s' %(fname, min_size, max_size)    
-    print fidu_cmd
+    print(fidu_cmd)
     x = subprocess.call(fidu_cmd, shell=True, cwd = fidu_exec_dir)
     return

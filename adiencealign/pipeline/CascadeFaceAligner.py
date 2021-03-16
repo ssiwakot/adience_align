@@ -48,7 +48,7 @@ class CascadeFaceAligner(object):
             if os.path.exists(done_file):
                 continue
             
-            print "... processing", input_file
+            print ("... processing", input_file)
 
             target_faces_file = os.path.join( output_folder, os.path.split(input_file)[1].rsplit('.',1)[0] + '.faces.txt')
             
@@ -59,7 +59,7 @@ class CascadeFaceAligner(object):
                                                     img_type = 'jpg')
             #touch
             open(done_file,'w').close()
-            print "Detected on %d / %d files" %(n_file, N)
+            print ("Detected on %d / %d files" %(n_file, N))
         
     def align_faces(self, input_images, output_path, fidu_max_size = None, fidu_min_size = None, is_align = True, is_draw_fidu = False, delete_no_fidu = False):
         '''

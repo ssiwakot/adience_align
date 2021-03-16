@@ -25,7 +25,7 @@ class CascadeDetector(object):
         '''
         cascade_type - is a string defining the type of cascade
         '''
-        print expand_path('.')
+        print (expand_path('.'))
         self.cascade_file = cascade_file.rsplit('/',1)[1]
         self._cascade_classifier = cv2.CascadeClassifier(cascade_file)
         self.scale_factor = scale_factor
@@ -219,7 +219,8 @@ def resolve_boxes(dict_of_list_of_cascade_results, min_overlap = 0.7):
                 final_faces.append(new_res)
     return final_faces
 
-def most_centered_box( cascade_results, ( rows, cols ) ):
+def most_centered_box( cascade_results, tup ):
+    rows, cols = tup
     best_err = 1e10
     for i, cascade in enumerate( cascade_results ):
         err = ( cascade.x + cascade.dx / 2 - cols / 2 ) ** 2 + ( cascade.y + cascade.dy / 2 - rows / 2 ) ** 2

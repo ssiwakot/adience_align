@@ -10,7 +10,7 @@ class AffineAligner(object):
     def __init__(self, fidu_model_file, ):
         
         self.shift = ( 0.25, 0.25 )
-        fidu_model = [(int(x.split(',')[1]),int(x.split(',')[2])) for x in file(fidu_model_file,'r')]
+        fidu_model = [(int(x.split(',')[1]),int(x.split(',')[2])) for x in open(fidu_model_file,'r')]
         self.fidu_model = shift_vector(fidu_model, self.shift)
         self.WEIGHTS3 = WEIGHTS3
         
